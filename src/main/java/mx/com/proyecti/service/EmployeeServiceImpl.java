@@ -16,7 +16,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	@Override
 	public Employee getEmployee(Long id) {
-		return employeeRepository.findOne(id);
+		return employeeRepository.getOne(id);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Boolean updateEmployee(Employee employee) {
-		Employee emp = employeeRepository.findOne(employee.getId());
+		Employee emp = employeeRepository.getOne(employee.getId());
 		if(emp!=null) {
 			emp.setFirstname(employee.getFirstname());
 			emp.setLastname(employee.getLastname());
@@ -39,13 +39,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public Boolean deleteEmployee(Long id) {
-		employeeRepository.delete(id);
+		Employee emp = new Employee();
+		emp.setId(id);
+		employeeRepository.delete(emp);
 		return true;
 	}
 
 	@Override
 	public List<Employee> getAllEmployees() {
 		return employeeRepository.findAll();
+	}
+
+	@Override
+	public List<Employee> findBySalary() {
+		return employeeRepository.findBySalary();
 	}
 
 }

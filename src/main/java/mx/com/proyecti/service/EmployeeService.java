@@ -11,5 +11,6 @@ public interface EmployeeService {
 	Boolean  updateEmployee(Employee employee);
 	Boolean deleteEmployee(Long id);
 	List<Employee> getAllEmployees();
+	List<Employee> findBySalary();
 	
 }

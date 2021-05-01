@@ -32,6 +32,11 @@ public class EmployeeController {
 	List<Employee> getAllEmployees(){
 		return employeeService.getAllEmployees();
 	}
+	
+	@GetMapping("/employees/bysalary")
+	List<Employee> findBySalary(){
+		return employeeService.findBySalary();
+	}
 
 	@PostMapping("/employees") //Utilizar la operación http POST
 	Long insertEmployee(@RequestBody Employee employee) {

@@ -1,0 +1,6 @@
+mx\com\proyecti\repository\EmployeeRepository.class
+mx\com\proyecti\controller\EmployeeController.class
+mx\com\proyecti\entity\Employee.class
+mx\com\proyecti\EmployeeRest.class
+mx\com\proyecti\service\EmployeeService.class
+mx\com\proyecti\service\EmployeeServiceImpl.class
